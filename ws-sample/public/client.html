@@ -1,24 +1,26 @@
-<html>
-<script>
-// Create WebSocket connection.
-const socket = new WebSocket('ws://localhost:80');
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="client.js">
 
-// Connection opened
-socket.addEventListener('open', function (event) {
-    socket.send('Hello Server!');
-});
+    </script>
+  </head>
+  <body>
+    Name: <input type="text" name="name" id="name" value="">
+    <button type="button" name="button" onclick="javascript:connect()">Connect</button>
 
-// Listen for messages
-socket.addEventListener('message', function (event) {
-    console.log('Message from server ', event.data);
-});
+    <br/>
 
-</script>
+    Value 1: <input type="text" name="value1" id="value1"> <br/>
+    Value 2: <input type="text" name="value2" id="value2"> <br/>
+    <button type="button" name="update" onclick="javascript:update()">Update</button>
 
+    <hr/>
 
-
-<body>
-Hello.
-</body>
-
+    <h3>Latest post: </h3>
+    Poster: <input type="text" id="latest_name" name="latest_name" value=""> <br/>
+    Latest Value 1: <input type="text" id="latest_value1"> <br/>
+    Latest Value 2: <input type="text" id="latest_value2"> <br/>  </body>
 </html>
